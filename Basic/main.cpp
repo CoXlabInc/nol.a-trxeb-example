@@ -8,13 +8,13 @@ static void ledOffTask(void *args);
 static void ledOnTask(void *args) {
   ledTimer.onFired(ledOffTask, NULL);
   ledTimer.startOneShot(10);
-  ledOn(0);
+  System.ledOn(0);
 }
 
 static void ledOffTask(void *args) {
   ledTimer.onFired(ledOnTask, NULL);
   ledTimer.startOneShot(990);
-  ledOff(0);
+  System.ledOff(0);
 }
 
 static void printTask(void *args) {
