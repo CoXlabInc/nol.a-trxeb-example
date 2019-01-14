@@ -5,7 +5,7 @@ Timer tSense;
 static void taskSense(void *) {
   uint8_t read;
 
-  System.ledToggle(0);
+  digitalToggle(LED_1);
 
   read = Wire.requestFrom(0x4F, 1);
   printf("Request 1 byte from 0x4F: %u byte read.\n", read);
